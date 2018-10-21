@@ -14,7 +14,7 @@ public class Recepcao {
 	}
 	
 	public void checkIn(String nome, String tipo, int idade, int dias, double valor) {
-		this.estadias.add(new Estadia(nome, idade, tipo, valor, dias));
+		this.estadias.add(new Estadia(nome, tipo, idade, dias, valor));
 		this.lucro += valor;
 	}
 	
@@ -39,9 +39,8 @@ public class Recepcao {
 	public String toString() {
 		String saida = "Estadias:" + System.lineSeparator();
 		for (Estadia estadia : this.estadias) {
-			saida += estadia.getAnimal().getNome() + " (" + estadia.getAnimal().getTipo() + "): "
-					+ estadia.getDias() + " dias com o preço de R$ " + estadia.getValor()
-					+ System.lineSeparator();
+			saida += String.format("%s (%s): %d dias com o preco de R$ %.2f", estadia.getAnimal().getNome(),
+					estadia.getAnimal().getTipo(), estadia.getDias(), estadia.getValor());
 		}
 		
 		return saida;

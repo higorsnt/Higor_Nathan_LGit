@@ -5,7 +5,7 @@ public class Estadia {
 	private double valor;
 	private int dias;
 	
-	public Estadia(String nome, int idade, String tipo, double valor, int dias) {
+	public Estadia(String nome, String tipo, int idade, int dias, double valor) {
 		this.animal = new Animal(nome, tipo, idade);
 		this.valor = valor;
 		this.dias = dias;
