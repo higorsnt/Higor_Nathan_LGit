@@ -2,11 +2,11 @@ package hotel;
 
 public class Estadia {
 	private Animal animal;
-	private int valor;
+	private double valor;
 	private int dias;
 	
-	public Estadia(Animal animal, int valor, int dias) {
-		this.animal = animal;
+	public Estadia(String nome, int idade, String tipo, int valor, int dias) {
+		this.animal = new Animal(nome, tipo, idade);
 		this.valor = valor;
 		this.dias = dias;
 	}
@@ -18,10 +18,25 @@ public class Estadia {
 	public void setAnimal(Animal animal) {
 		this.animal = animal;
 	}
+	public int getDias() {
+		return this.dias;
+	}
+	public double getValor() {
+		return this.valor;
+	}
+	public String getNome() {
+		return this.animal.getNome();
+	}
+	public String getTipo() {
+		return this.animal.getTipo();
+	}
+	public int getIdade() {
+		return this.animal.getIdade();
+	}
 	
 	public String toString() {
 		return this.animal.getNome() + ", " + this.animal.getTipo() + ", " + this.dias + " dias com o preço de R$ "
-				+ this.valor + ".00" + System.lineSeparator();			
+				+ this.valor + System.lineSeparator();			
 	}
 	
 	
